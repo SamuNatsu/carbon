@@ -1,5 +1,6 @@
 ---
 layout: '@/layouts/AboutLayout.astro'
+title: 游戏简介
 ---
 
 这里是游戏简介，请修改 `/src/pages/about/intro.md` 文件以编写
