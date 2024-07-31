@@ -17,6 +17,13 @@ type Props = MarkdownLayoutProps<{
 
 // Injects
 const { frontmatter } = Astro.props;
+
+// Functions
+const isMatch = (url: string): boolean => {
+  const baseUrl: string =
+    import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+  return Astro.url.pathname.startsWith(baseUrl + url);
+};
 ---
 
 <BaseLayout title={frontmatter.title}>
@@ -26,7 +33,7 @@ const { frontmatter } = Astro.props;
       <RouterLink
         class:list={[
           'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
-          Astro.url.pathname.startsWith('/about/intro')
+          isMatch('/about/intro')
             ? 'border-blue-500 text-blue-500'
             : 'border-transparent hover:border-b-2 hover:border-blue-500'
         ]}
@@ -37,7 +44,7 @@ const { frontmatter } = Astro.props;
       <RouterLink
         class:list={[
           'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
-          Astro.url.pathname.startsWith('/about/faq')
+          isMatch('/about/faq')
             ? 'border-blue-500 text-blue-500'
             : 'border-transparent hover:border-b-2 hover:border-blue-500'
         ]}
@@ -48,7 +55,7 @@ const { frontmatter } = Astro.props;
       <RouterLink
         class:list={[
           'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
-          Astro.url.pathname.startsWith('/about/stuff')
+          isMatch('/about/stuff')
             ? 'border-blue-500 text-blue-500'
             : 'border-transparent hover:border-b-2 hover:border-blue-500'
         ]}
