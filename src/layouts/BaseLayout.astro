@@ -1,0 +1,36 @@
+---
+import cfg from '@/config';
+
+// Types
+type Props = { description?: string; ogImage?: string; title?: string };
+
+// Injects
+const { description, ogImage, title } = Astro.props;
+
+// Constants
+const shownTitle: string = title
+  ? `${title}${cfg.titleSeparator}${cfg.siteName}`
+  : cfg.siteName;
+---
+
+<html lang={cfg.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{shownTitle}</title>
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" href={cfg.iconUrl} />
+    {description && <meta name="description" content={description} />}
+    <meta name="generator" content={Astro.generator} />
+    {description && <meta property="og:description" content={description} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:locale" content={cfg.locale} />
+    <meta property="og:site_name" content={cfg.siteName} />
+    <meta property="og:title" content={shownTitle} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={Astro.url} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
