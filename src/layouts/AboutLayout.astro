@@ -24,19 +24,19 @@ const { frontmatter } = Astro.props;
     <nav class="flex gap-4 items-center my-4">
       <AboutNavItem
         icon="mdi:file-document-outline"
-        match={/^\/about\/intro$/}
+        match={/^\/about\/intro\/?$/}
         name="谜题简介"
         to="/about/intro"
       />
       <AboutNavItem
         icon="mdi:question-box-outline"
-        match={/^\/about\/faq$/}
+        match={/^\/about\/faq\/?$/}
         name="常见问题"
         to="/about/faq"
       />
       <AboutNavItem
         icon="mdi:account-multiple"
-        match={/^\/about\/stuff$/}
+        match={/^\/about\/stuff\/?$/}
         name="工作人员"
         to="/about/stuff"
       />
