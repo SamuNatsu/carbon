@@ -1,0 +1,33 @@
+---
+// Components
+import RouterLink from '@/components/RouterLink.astro';
+import { Icon } from 'astro-icon/components';
+
+// Types
+type Props = { icon: string; match: RegExp; name: string; to: string };
+
+// Injects
+const { icon, match, name, to } = Astro.props;
+
+// Constants
+const currentUrl: string = ((): string => {
+  const tmp: string = Astro.url.pathname.slice(import.meta.env.BASE_URL.length);
+  return tmp.startsWith('/') ? tmp : '/' + tmp;
+})();
+const targetUrl: string = ((): string => {
+  const tmp: string = import.meta.env.BASE_URL + to;
+  return tmp.startsWith('//') ? tmp.slice(1) : tmp;
+})();
+---
+
+<RouterLink
+  class:list={[
+    'border-b-2 flex gap-2 items-center p-2',
+    match.test(currentUrl)
+      ? 'border-blue-500 text-blue-500'
+      : 'border-transparent hover:border-blue-500'
+  ]}
+  href={targetUrl}>
+  <Icon class="text-lg" name={icon} />
+  <span class="text-sm">{name}</span>
+</RouterLink>
