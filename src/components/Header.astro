@@ -1,0 +1,40 @@
+---
+import cfg from '@/config';
+
+// Components
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+---
+
+<header class="bg-neutral-800 sticky text-white top-0 w-full">
+  <div class="flex items-center justify-between max-w-5xl mx-auto py-2">
+    <a class="flex gap-2 items-center" href="/">
+      {
+        cfg.siteLogo && (
+          <Image alt="logo" height="24" src={cfg.siteLogo} width="24" />
+        )
+      }
+      <span class="text-lg">{cfg.siteName}</span>
+    </a>
+    <nav class="flex gap-4 items-end">
+      <a
+        class="flex gap-1 items-end text-neutral-400 hover:text-white"
+        href="/puzzle">
+        <Icon class="text-lg" name="mdi:rocket-launch-outline" />
+        <span class="text-sm">开始探索</span>
+      </a>
+      <a
+        class="flex gap-1 items-end text-neutral-400 hover:text-white"
+        href="/record">
+        <Icon class="text-lg" name="mdi:list-box-outline" />
+        <span class="text-sm">记录点</span>
+      </a>
+      <a
+        class="flex gap-1 items-end text-neutral-400 hover:text-white"
+        href="/about">
+        <Icon class="text-lg" name="mdi:about-circle-outline" />
+        <span class="text-sm">关于</span>
+      </a>
+    </nav>
+  </div>
+</header>
