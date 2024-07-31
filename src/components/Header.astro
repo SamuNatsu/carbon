@@ -2,13 +2,14 @@
 import cfg from '@/config';
 
 // Components
+import RouterLink from '@/components/RouterLink.astro';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 ---
 
 <header class="bg-neutral-800 sticky text-white top-0 w-full">
   <div class="flex items-center justify-between max-w-5xl mx-auto py-2">
-    <a class="flex gap-2 items-center" href="/">
+    <RouterLink class="flex gap-2 items-center" href="/">
       {
         cfg.siteLogo && (
           <Image
@@ -21,32 +22,32 @@ import { Icon } from 'astro-icon/components';
         )
       }
       <span class="text-lg">{cfg.siteName}</span>
-    </a>
+    </RouterLink>
     <nav class="flex gap-6 items-end">
-      <a
+      <RouterLink
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
         href="/">
         <Icon class="text-lg" name="mdi:home-outline" />
         <span class="text-sm">主页</span>
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
         href="/puzzle/1">
         <Icon class="text-lg" name="mdi:rocket-launch-outline" />
         <span class="text-sm">开始探索</span>
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
         href="/record">
         <Icon class="text-lg" name="mdi:list-box-outline" />
         <span class="text-sm">记录点</span>
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
         href="/about/intro">
         <Icon class="text-lg" name="mdi:about-circle-outline" />
         <span class="text-sm">关于</span>
-      </a>
+      </RouterLink>
     </nav>
   </div>
 </header>
