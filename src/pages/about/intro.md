@@ -1,9 +1,9 @@
 ---
 layout: '@/layouts/AboutLayout.astro'
-title: 游戏简介
+title: 谜题简介
 ---
 
-这里是游戏简介，请修改 `/src/pages/about/intro.md` 文件以编写
+这里是谜题简介，请修改 `/src/pages/about/intro.md` 文件以编写
 
 以下是 Markdown 样式测试代码：
 
