@@ -1,0 +1,54 @@
+---
+// Layouts
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Components
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<BaseLayout title="Astro">
+  <Header />
+  <main class="max-w-4xl mx-auto">
+    <nav class="flex gap-4 items-center my-4">
+      <a
+        class:list={[
+          'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
+          Astro.url.pathname.startsWith('/about/intro')
+            ? 'border-blue-500 text-blue-500'
+            : 'border-transparent hover:border-b-2 hover:border-blue-500'
+        ]}
+        href="/about/intro">
+        <Icon class="text-lg" name="mdi:file-document-outline" />
+        <span class="text-sm">游戏简介</span>
+      </a>
+      <a
+        class:list={[
+          'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
+          Astro.url.pathname.startsWith('/about/faq')
+            ? 'border-blue-500 text-blue-500'
+            : 'border-transparent hover:border-b-2 hover:border-blue-500'
+        ]}
+        href="/about/faq">
+        <Icon class="text-lg" name="mdi:question-box-outline" />
+        <span class="text-sm">常见问题</span>
+      </a>
+      <a
+        class:list={[
+          'border-b-2 flex gap-2 items-center p-2 hover:border-b-2',
+          Astro.url.pathname.startsWith('/about/stuff')
+            ? 'border-blue-500 text-blue-500'
+            : 'border-transparent hover:border-b-2 hover:border-blue-500'
+        ]}
+        href="/about/stuff">
+        <Icon class="text-lg" name="mdi:account-multiple" />
+        <span class="text-sm">工作人员</span>
+      </a>
+    </nav>
+    <article class="my-8">
+      <slot />
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import cfg from '@/config';
+---
+
+<footer
+  class="flex flex-col gap-1 items-center mx-auto my-8 text-neutral-500 text-sm">
+  <p class="leading-none">
+    Made by {
+      cfg.authorUrl ? (
+        <a href={cfg.authorUrl} rel="noopener noreferer" target="_blank">
+          <b>{cfg.authorName}</b>
+        </a>
+      ) : (
+        <b>{cfg.authorName}</b>
+      )
+    } | Powered by <a
+      href="https://github.com/SamuNatsu/carbon"
+      rel="noopener noreferer"
+      target="_blank"><b>Carbon</b></a
+    >
+  </p>
+  {
+    cfg.ICP && (
+      <p class="leading-none">
+        <a
+          href="https://beian.miit.gov.cn"
+          rel="noopener noreferer"
+          target="_blank">
+          {cfg.ICP}
+        </a>
+      </p>
+    )
+  }
+</footer>

@@ -14,9 +14,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.12.3(@types/node@22.0.0)(typescript@5.5.4))(tailwindcss@3.4.7)
-      '@fontsource-variable/noto-sans-sc':
-        specifier: ^5.0.6
-        version: 5.0.6
       '@iconify-json/mdi':
         specifier: ^1.1.67
         version: 1.1.67
@@ -342,9 +339,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource-variable/noto-sans-sc@5.0.6':
-    resolution: {integrity: sha512-aw43cFuLAo+at9lfzbejCSkusivMQ1uUPlWeqde+eAkMvhtMkO2LjSp0QJCyVDf22NtLNbOX0WYNPtocHXFuiA==}
 
   '@iconify-json/mdi@1.1.67':
     resolution: {integrity: sha512-00nllHES8hyACwIfgySlQgAE6MKgpr2wsKfpifMiZWZ9aXC5l4Jb0lR3lJSWwXgOW6kzAOdzC3T+2VOfBBZ13A==}
@@ -2624,8 +2618,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
-
-  '@fontsource-variable/noto-sans-sc@5.0.6': {}
 
   '@iconify-json/mdi@1.1.67':
     dependencies:

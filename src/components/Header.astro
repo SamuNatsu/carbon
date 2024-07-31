@@ -11,12 +11,24 @@ import { Icon } from 'astro-icon/components';
     <a class="flex gap-2 items-center" href="/">
       {
         cfg.siteLogo && (
-          <Image alt="logo" height="24" src={cfg.siteLogo} width="24" />
+          <Image
+            alt="logo"
+            height="24"
+            loading="eager"
+            src={cfg.siteLogo}
+            width="24"
+          />
         )
       }
       <span class="text-lg">{cfg.siteName}</span>
     </a>
-    <nav class="flex gap-4 items-end">
+    <nav class="flex gap-6 items-end">
+      <a
+        class="flex gap-1 items-end text-neutral-400 hover:text-white"
+        href="/">
+        <Icon class="text-lg" name="mdi:home-outline" />
+        <span class="text-sm">主页</span>
+      </a>
       <a
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
         href="/puzzle">
@@ -31,7 +43,7 @@ import { Icon } from 'astro-icon/components';
       </a>
       <a
         class="flex gap-1 items-end text-neutral-400 hover:text-white"
-        href="/about">
+        href="/about/intro">
         <Icon class="text-lg" name="mdi:about-circle-outline" />
         <span class="text-sm">关于</span>
       </a>
