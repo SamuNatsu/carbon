@@ -59,7 +59,7 @@ article {
   th {
     @apply border px-4 py-2;
   }
-  tr:nth-child(even) {
+  tbody > tr:nth-child(odd) {
     @apply bg-neutral-50;
   }
 
