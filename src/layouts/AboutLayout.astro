@@ -5,7 +5,7 @@ import type { MarkdownLayoutProps } from 'astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 // Components
-import AboutNavItem from '@/components/AboutNavItem.astro';
+import MainNavItem from '@/components/MainNavItem.astro';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 
@@ -22,19 +22,19 @@ const { frontmatter } = Astro.props;
   <Header />
   <main class="max-w-4xl mx-auto">
     <nav class="flex gap-4 items-center my-4">
-      <AboutNavItem
+      <MainNavItem
         icon="mdi:file-document-outline"
         match={/^\/about\/intro\/?$/}
         name="谜题简介"
         to="/about/intro"
       />
-      <AboutNavItem
+      <MainNavItem
         icon="mdi:question-box-outline"
         match={/^\/about\/faq\/?$/}
         name="常见问题"
         to="/about/faq"
       />
-      <AboutNavItem
+      <MainNavItem
         icon="mdi:account-multiple"
         match={/^\/about\/stuff\/?$/}
         name="工作人员"
